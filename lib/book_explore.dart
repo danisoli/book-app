@@ -21,21 +21,20 @@ ThemeData _bookAppTheme() {
   final base = ThemeData.light();
   return base.copyWith(
       inputDecorationTheme: const InputDecorationTheme(
-        focusColor: whiteGray,
-        filled: true,
-        fillColor: whiteGray,
-        suffixIconColor: gray,
-        enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide.none,
-            borderRadius: BorderRadius.all(Radius.circular(15))),
-        focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: gray, width: 2),
-            borderRadius: BorderRadius.all(Radius.circular(15.0))),
-        labelStyle: TextStyle(color: black),
-      ),
-      textTheme: _bookAppTextTheme(base.textTheme));
+    focusColor: whiteGray,
+    filled: true,
+    fillColor: whiteGray,
+    suffixIconColor: gray,
+    enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.all(Radius.circular(15))),
+    focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: gray, width: 2),
+        borderRadius: BorderRadius.all(Radius.circular(15.0))),
+    labelStyle: TextStyle(color: black),
+  ));
 }
-
+/*
 TextTheme _bookAppTextTheme(TextTheme base) {
   return base
       .copyWith(
@@ -44,3 +43,4 @@ TextTheme _bookAppTextTheme(TextTheme base) {
           headlineSmall: base.headlineSmall?.copyWith(color: blue))
       .apply(fontFamily: 'Rubik', displayColor: blue, bodyColor: blue);
 }
+*/
