@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'colors.dart';
 import 'library.dart';
@@ -9,6 +10,7 @@ class BookExploreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/library',
       debugShowCheckedModeBanner: false,
       title: 'book_explore_and_sale_app',
       home: Library(),
@@ -20,6 +22,9 @@ class BookExploreApp extends StatelessWidget {
 ThemeData _bookAppTheme() {
   final base = ThemeData.light();
   return base.copyWith(
+    appBarTheme: AppBarTheme(
+        systemOverlayStyle:
+            SystemUiOverlayStyle.dark.copyWith(statusBarColor: Colors.white)),
     inputDecorationTheme: const InputDecorationTheme(
       focusColor: whiteGray,
       filled: true,
@@ -45,6 +50,8 @@ TextTheme _bookAppTextTheme(TextTheme base) {
           labelMedium: base.labelMedium
               ?.copyWith(fontSize: 12, fontWeight: FontWeight.w600),
           titleLarge: base.titleLarge
+              ?.copyWith(fontSize: 20, fontWeight: FontWeight.w900),
+          headlineMedium: base.headlineMedium
               ?.copyWith(fontSize: 20, fontWeight: FontWeight.w800))
       .apply(
         fontFamily: 'Urbanist',
