@@ -4,12 +4,11 @@ import 'widgets.dart';
 import 'package:book_explore_and_sale_app/model/books.dart';
 import 'colors.dart';
 
-class Library extends StatelessWidget {
-  Library({super.key});
-
+class LibraryPage extends StatelessWidget {
+  LibraryPage({super.key});
   static const routeName = '/library';
 
-  final FocusNode searchBarFocusNode = FocusNode();
+  //final FocusNode searchBarFocusNode = FocusNode();
 
   final TextEditingController searchController = TextEditingController();
 
@@ -20,73 +19,14 @@ class Library extends StatelessWidget {
       //focusNode: searchBarFocusNode,
       context: context,
       child: Scaffold(
-        bottomNavigationBar: const MyBottonNavigationBar(),
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          // systemOverlayStyle: const SystemUiOverlayStyle(
-          //     systemStatusBarContrastEnforced: true),
-          backgroundColor: Colors.white,
-          leading: IconButton(
-            onPressed: () {},
-            icon: Image.asset(
-              'assets/images/icons/menu-icon.png',
-              scale: 2,
-            ),
-          ),
-          elevation: 0,
-          title: SizedBox(
-            width: double.maxFinite,
-            height: 36,
-            child: TextField(
-              controller: searchController,
-              cursorColor: yellow,
-              clipBehavior: Clip.antiAlias,
-              decoration: const InputDecoration(
-                  suffixIcon: Icon(Icons.search),
-                  contentPadding: EdgeInsets.all(8)),
-            ),
-          ),
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: Image.asset(
-                  'assets/images/icons/qr-code.png',
-                  scale: 2,
-                )),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8),
-              child: Stack(children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.notifications,
-                      color: blue,
-                    )),
-                Positioned(
-                  left: 24,
-                  top: 11,
-                  child: Container(
-                    width: 11,
-                    height: 11,
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.white),
-                  ),
-                ),
-                Positioned(
-                    left: 26,
-                    top: 13,
-                    child: Container(
-                      width: 7,
-                      height: 7,
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle, color: yellow),
-                    ))
-              ]),
-            )
-          ],
+        bottomNavigationBar: const MyNavigationBar(
+          page: 0,
+          height: 65,
         ),
+        backgroundColor: Colors.white,
+        appBar: myAppBar(searchController),
         body: Padding(
-          padding: const EdgeInsets.fromLTRB(18.0, 12, 0, 0),
+          padding: const EdgeInsets.fromLTRB(16.0, 12, 0, 0),
           child: ListView(
             physics: const BouncingScrollPhysics(),
             children: [

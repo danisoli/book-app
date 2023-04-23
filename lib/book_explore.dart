@@ -1,8 +1,9 @@
+import 'package:book_explore_and_sale_app/route_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'colors.dart';
-import 'library.dart';
+import 'library_page.dart';
 
 class BookExploreApp extends StatelessWidget {
   const BookExploreApp({super.key});
@@ -12,8 +13,9 @@ class BookExploreApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/library',
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: RouteGenerator.generateRoute,
+      home: LibraryPage(),
       title: 'book_explore_and_sale_app',
-      home: Library(),
       theme: _bookAppTheme(),
     );
   }
@@ -49,8 +51,8 @@ TextTheme _bookAppTextTheme(TextTheme base) {
               fontSize: 14, fontWeight: FontWeight.w400, color: blue),
           labelMedium: base.labelMedium
               ?.copyWith(fontSize: 12, fontWeight: FontWeight.w600),
-          titleLarge: base.titleLarge
-              ?.copyWith(fontSize: 20, fontWeight: FontWeight.w900),
+          titleLarge: base.titleLarge?.copyWith(
+              fontSize: 20, letterSpacing: 1, fontWeight: FontWeight.w900),
           headlineMedium: base.headlineMedium
               ?.copyWith(fontSize: 20, fontWeight: FontWeight.w800))
       .apply(
