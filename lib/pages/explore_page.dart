@@ -1,7 +1,14 @@
-import 'package:book_explore_and_sale_app/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'colors.dart';
+
+import '../colors.dart';
+import '../model/book_repository.dart';
+import '../model/books.dart';
+import '../widgets/explore_categuries_card.dart';
+import '../widgets/explore_image_page.dart';
+import '../widgets/keyboard_dismisser.dart';
+import '../widgets/my_app_bar.dart';
+import '../widgets/my_navigation_bar.dart';
 
 class ExplorePage extends StatelessWidget {
   ExplorePage({super.key});
@@ -32,7 +39,7 @@ class ExplorePage extends StatelessWidget {
         appBar: myAppBar(searchController),
         body: Container(
           decoration: const BoxDecoration(color: Colors.white),
-          child: ListView(
+          child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
@@ -65,16 +72,23 @@ class ExplorePage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: Text(
-                  'Categuries',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      color: blue, fontSize: 20, fontWeight: FontWeight.w900),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16),
+                  child: Text(
+                    'Categuries',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        color: blue, fontSize: 20, fontWeight: FontWeight.w900),
+                  ),
                 ),
               ),
               const SizedBox(
-                height: 5,
+                height: 6,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: ExploreTabBar(),
               ),
             ],
           ),

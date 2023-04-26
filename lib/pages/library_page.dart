@@ -1,8 +1,14 @@
 import 'package:book_explore_and_sale_app/model/book_repository.dart';
 import 'package:flutter/material.dart';
-import 'widgets.dart';
-import 'package:book_explore_and_sale_app/model/books.dart';
-import 'colors.dart';
+
+import '../colors.dart';
+import '../model/books.dart';
+import '../widgets/keyboard_dismisser.dart';
+import '../widgets/library_discover_more.dart';
+import '../widgets/my_app_bar.dart';
+import '../widgets/my_library_card.dart';
+import '../widgets/my_navigation_bar.dart';
+import '../widgets/my_wishlist_card.dart';
 
 class LibraryPage extends StatelessWidget {
   LibraryPage({super.key});
@@ -95,14 +101,14 @@ class LibraryPage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 24,
+                height: 12,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: SizedBox(
                   width: 230,
                   height:
-                      BookRepository.bookList(Categuries.all).length / 2 * 140,
+                      BookRepository.bookList(Categuries.all).length / 2 * 90,
                   child: GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount:
@@ -111,6 +117,7 @@ class LibraryPage extends StatelessWidget {
                           const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
                               mainAxisSpacing: 2,
+                              childAspectRatio: 1.7 / 1,
                               crossAxisSpacing: 2),
                       itemBuilder: (context, count) {
                         return myWishlistCard(

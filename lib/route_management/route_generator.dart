@@ -1,5 +1,6 @@
-import 'explore_page.dart';
-import 'library_page.dart';
+import '../pages/book_page.dart';
+import '../pages/explore_page.dart';
+import '../pages/library_page.dart';
 import 'route_const.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,8 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final routes = <String, Route>{
       libraryPageRoute: MaterialPageRoute(builder: (context) => LibraryPage()),
-      explorePageRoute: MaterialPageRoute(builder: (context) => ExplorePage())
+      explorePageRoute: MaterialPageRoute(builder: (context) => ExplorePage()),
+      bookPageRoute: MaterialPageRoute(builder: (context) => BookPage())
     };
     return routes[settings.name]!;
   }

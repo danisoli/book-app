@@ -9,6 +9,17 @@ enum Categuries {
   religious
 }
 
+Map mapCateguries = {
+  0: Categuries.all,
+  1: Categuries.biography,
+  2: Categuries.romance,
+  3: Categuries.thriller,
+  4: Categuries.fiction,
+  5: Categuries.crime,
+  6: Categuries.movie,
+  7: Categuries.religious,
+};
+
 class Book {
   const Book({
     required this.categuries,

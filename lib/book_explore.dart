@@ -1,9 +1,8 @@
-import 'package:book_explore_and_sale_app/route_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'colors.dart';
-import 'library_page.dart';
+import 'pages/library_page.dart';
+import 'route_management/route_generator.dart';
 
 class BookExploreApp extends StatelessWidget {
   const BookExploreApp({super.key});
